@@ -1,0 +1,37 @@
+{
+  "name": "zstd",
+  "version": "1.5.7.0",
+  "schemaVersion": 2,
+  "kind": "DynamicLib",
+  "description": "Facebook's fast real-time compression algorithm",
+  "dependencies": {},
+  "options": {
+    "shared": {
+      "default": true,
+      "allowed": [true, false],
+      "description": "Build as shared library; set false for static"
+    }
+  },
+  "build": {
+    "system": "cmake",
+    "configs": [
+      "Debug",
+      "Release",
+      "RelWithDebInfo",
+      "MinSizeRel"
+    ],
+    "configure": [
+      "-DZSTD_BUILD_SHARED=${options.shared}",
+      "-DZSTD_BUILD_STATIC=ON",
+      "-DZSTD_BUILD_PROGRAMS=OFF",
+      "-DZSTD_BUILD_TESTS=OFF",
+      "-DZSTD_BUILD_CONTRIB=OFF",
+      "-DZSTD_LEGACY_SUPPORT=OFF",
+      "-DZSTD_MULTITHREAD_SUPPORT=ON",
+      "-DCMAKE_DEBUG_POSTFIX=d",
+      "-DCMAKE_RELWITHDEBINFO_POSTFIX=rd",
+      "-DCMAKE_MINSIZEREL_POSTFIX=msr"
+    ],
+    "installDir": "install"
+  }
+}
