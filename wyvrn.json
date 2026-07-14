@@ -1,6 +1,6 @@
 {
   "name": "zstd",
-  "version": "1.5.7.0",
+  "version": "1.5.7.1",
   "schemaVersion": 2,
   "kind": "DynamicLib",
   "description": "Facebook's fast real-time compression algorithm",
@@ -11,6 +11,14 @@
       "allowed": [true, false],
       "description": "Build as shared library; set false for static"
     }
+  },
+  "compatibility": {
+    "os": "exact",
+    "arch": "exact",
+    "compiler": "exact",
+    "compiler.version": "exact-or-newer",
+    "compiler.cppstd": "exact-or-newer",
+    "compiler.runtime": "exact"
   },
   "build": {
     "system": "cmake",
